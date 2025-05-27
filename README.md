@@ -1,4 +1,5 @@
 # MCP Server Repository
+![MCP Server Logo](logo.png)
 
 ## Overview
 This repository demonstrates the implementation and usage of GitHub's Model Context Protocol (MCP) Server, a powerful integration tool that bridges Visual Studio Code with GitHub's AI capabilities.
