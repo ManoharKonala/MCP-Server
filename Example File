@@ -1,4 +1,60 @@
-This is an example file created using the GitHub MCP Server.
+# GitHub MCP Server Example
+
+This file demonstrates the functionality of the GitHub Model Context Protocol (MCP) Server.
+
+## What is MCP Server?
+The Model Context Protocol (MCP) Server is a powerful tool that enables seamless interaction between VS Code and GitHub's AI features. It acts as a bridge for:
+- Managing AI model interactions
+- Handling context-aware code suggestions
+- Processing GitHub Copilot requests
+- Managing repository operations through AI assistance
+
+## Example Usage
+This file itself was created using the MCP Server with the following configuration:
+```json
+{
+    "command": "docker",
+    "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+    ]
+}
+```
+
+## Features Demonstrated
+1. File Creation: This file was created using MCP Server
+2. Repository Management: Part of the MCP-Server repository
+3. Docker Integration: Running through containerized environment
+4. Token Authentication: Using GitHub Personal Access Token
+
+## Technical Details
+- Protocol: Model Context Protocol (MCP)
+- Server Image: ghcr.io/github/github-mcp-server
+- Runtime: Docker Container
+- Authentication: GitHub Personal Access Token
+- Interface: VS Code Integration
+
+## Use Cases
+1. Repository Management
+   - Create/Update files
+   - Manage commits
+   - Handle pull requests
+2. AI Assistance
+   - Context-aware code suggestions
+   - Intelligent file operations
+   - Automated documentation
+3. Development Workflow
+   - Seamless VS Code integration
+   - Docker-based execution
+   - Secure token management
 
 Created on: May 27, 2025
+Last Updated: May 27, 2025
 Repository: MCP-Server
+Author: ManoharKonala
+
+Note: This is a demonstration file showing how MCP Server can be used to manage GitHub repositories and files directly from VS Code.
