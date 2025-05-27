@@ -1,60 +1,173 @@
-# GitHub MCP Server Example
+# MCP Server Practical Examples
 
-This file demonstrates the functionality of the GitHub Model Context Protocol (MCP) Server.
+This file provides hands-on examples and demonstrations of using the GitHub MCP Server in real-world scenarios.
 
-## What is MCP Server?
-The Model Context Protocol (MCP) Server is a powerful tool that enables seamless interaction between VS Code and GitHub's AI features. It acts as a bridge for:
-- Managing AI model interactions
-- Handling context-aware code suggestions
-- Processing GitHub Copilot requests
-- Managing repository operations through AI assistance
+## Practical Demonstrations
 
-## Example Usage
-This file itself was created using the MCP Server with the following configuration:
-```json
+### 1. File Operations
+```bash
+# Example of creating a file
+POST /repos/:owner/:repo/contents/:path
 {
-    "command": "docker",
-    "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "GITHUB_PERSONAL_ACCESS_TOKEN",
-        "ghcr.io/github/github-mcp-server"
-    ]
+    "message": "Created via MCP Server",
+    "content": "base64_encoded_content"
+}
+
+# Example of updating a file
+PUT /repos/:owner/:repo/contents/:path
+{
+    "message": "Updated via MCP Server",
+    "content": "base64_encoded_content",
+    "sha": "existing_file_sha"
 }
 ```
 
-## Features Demonstrated
-1. File Creation: This file was created using MCP Server
-2. Repository Management: Part of the MCP-Server repository
-3. Docker Integration: Running through containerized environment
-4. Token Authentication: Using GitHub Personal Access Token
+### 2. Repository Actions
+```bash
+# Example of creating a repository
+POST /user/repos
+{
+    "name": "new-repo",
+    "description": "Created via MCP Server"
+}
 
-## Technical Details
-- Protocol: Model Context Protocol (MCP)
-- Server Image: ghcr.io/github/github-mcp-server
-- Runtime: Docker Container
-- Authentication: GitHub Personal Access Token
-- Interface: VS Code Integration
+# Example of managing branches
+POST /repos/:owner/:repo/git/refs
+{
+    "ref": "refs/heads/feature-branch",
+    "sha": "base_commit_sha"
+}
+```
 
-## Use Cases
-1. Repository Management
-   - Create/Update files
-   - Manage commits
-   - Handle pull requests
-2. AI Assistance
-   - Context-aware code suggestions
-   - Intelligent file operations
-   - Automated documentation
-3. Development Workflow
-   - Seamless VS Code integration
-   - Docker-based execution
-   - Secure token management
+## Sample Code Snippets
 
-Created on: May 27, 2025
+### Python Example - Repository Creation
+```python
+import requests
+
+def create_repo(name, token):
+    headers = {
+        'Authorization': f'token {token}',
+        'Accept': 'application/vnd.github.v3+json'
+    }
+    data = {
+        'name': name,
+        'auto_init': True
+    }
+    response = requests.post(
+        'https://api.github.com/user/repos',
+        json=data,
+        headers=headers
+    )
+    return response.json()
+```
+
+### JavaScript Example - File Management
+```javascript
+async function updateFile(owner, repo, path, content, token) {
+    const headers = {
+        Authorization: `token ${token}`,
+        Accept: 'application/vnd.github.v3+json'
+    };
+    
+    // First get the file's SHA
+    const fileResponse = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/contents/${path}`,
+        { headers }
+    );
+    const fileData = await fileResponse.json();
+    
+    // Then update the file
+    const updateResponse = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/contents/${path}`,
+        {
+            method: 'PUT',
+            headers,
+            body: JSON.stringify({
+                message: 'Update file via MCP',
+                content: Buffer.from(content).toString('base64'),
+                sha: fileData.sha
+            })
+        }
+    );
+    return await updateResponse.json();
+}
+```
+
+## Error Handling Examples
+
+### Common Error Scenarios
+1. Token Authentication Failure
+```json
+{
+    "message": "Bad credentials",
+    "documentation_url": "https://docs.github.com/rest"
+}
+```
+
+2. Resource Not Found
+```json
+{
+    "message": "Not Found",
+    "documentation_url": "https://docs.github.com/rest/reference/repos#get-repository-content"
+}
+```
+
+### Error Resolution Tips
+1. Token Issues:
+   - Verify token permissions
+   - Check token expiration
+   - Ensure proper environment variable setup
+
+2. Resource Access:
+   - Verify repository existence
+   - Check path accuracy
+   - Confirm access permissions
+
+## Best Practices
+
+### 1. Token Management
+- Use environment variables
+- Implement token rotation
+- Set appropriate scopes
+- Regular token audits
+
+### 2. Error Handling
+- Implement retry logic
+- Log failed operations
+- Provide meaningful error messages
+- Handle rate limiting
+
+### 3. Performance Optimization
+- Batch operations when possible
+- Cache frequently accessed data
+- Use conditional requests
+- Implement pagination
+
+### 4. Security Considerations
+- Validate input data
+- Sanitize file contents
+- Implement request signing
+- Monitor access patterns
+
+## Testing Examples
+
+### 1. Connection Test
+```bash
+curl -H "Authorization: token ${GITHUB_TOKEN}" \
+     -H "Accept: application/vnd.github.v3+json" \
+     https://api.github.com/user
+```
+
+### 2. Repository Access Test
+```bash
+curl -H "Authorization: token ${GITHUB_TOKEN}" \
+     -H "Accept: application/vnd.github.v3+json" \
+     https://api.github.com/repos/${OWNER}/${REPO}
+```
+
+Created: May 27, 2025
 Last Updated: May 27, 2025
-Repository: MCP-Server
 Author: ManoharKonala
 
-Note: This is a demonstration file showing how MCP Server can be used to manage GitHub repositories and files directly from VS Code.
+Note: This file contains practical examples and code snippets for working with the MCP Server. For general documentation and setup instructions, please refer to the README.md file.
