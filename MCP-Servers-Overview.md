@@ -1,4 +1,4 @@
-<img src="assets/mcp-banner.svg" alt="MCP Servers Banner" width="100%">
+ <img src="assets/mcp-banner.svg" alt="MCP Servers Banner" width="100%">
 
 # Model Context Protocol (MCP) Servers: Current and Future Trends
 
