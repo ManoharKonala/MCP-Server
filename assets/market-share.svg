@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .pie-slice { stroke: white; stroke-width: 2; }
+        .label { font-family: Arial; fill: #2c3e50; }
+        .percentage { font-family: Arial; fill: #7f8c8d; font-size: 14px; }
+        .legend-box { fill: none; stroke: #bdc3c7; stroke-width: 1; }
+    </style>
+    
+    <!-- Pie Chart -->
+    <g transform="translate(300,200)">
+        <!-- GitHub MCP -->
+        <path d="M0,0 L150,0 A150,150 0 0,1 75,-129.9" class="pie-slice" fill="#3498db"/>
+        <!-- Azure MCP -->
+        <path d="M0,0 L75,-129.9 A150,150 0 0,1 -129.9,-75" class="pie-slice" fill="#2ecc71"/>
+        <!-- AWS MCP -->
+        <path d="M0,0 L-129.9,-75 A150,150 0 0,1 -75,129.9" class="pie-slice" fill="#e74c3c"/>
+        <!-- Others -->
+        <path d="M0,0 L-75,129.9 A150,150 0 0,1 150,0" class="pie-slice" fill="#f1c40f"/>
+    </g>
+    
+    <!-- Legend -->
+    <g transform="translate(600,50)">
+        <rect width="180" height="140" class="legend-box"/>
+        
+        <!-- GitHub MCP -->
+        <rect x="10" y="10" width="20" height="20" fill="#3498db"/>
+        <text x="40" y="25" class="label">GitHub MCP</text>
+        <text x="150" y="25" class="percentage">40%</text>
+        
+        <!-- Azure MCP -->
+        <rect x="10" y="40" width="20" height="20" fill="#2ecc71"/>
+        <text x="40" y="55" class="label">Azure MCP</text>
+        <text x="150" y="55" class="percentage">25%</text>
+        
+        <!-- AWS MCP -->
+        <rect x="10" y="70" width="20" height="20" fill="#e74c3c"/>
+        <text x="40" y="85" class="label">AWS MCP</text>
+        <text x="150" y="85" class="percentage">20%</text>
+        
+        <!-- Others -->
+        <rect x="10" y="100" width="20" height="20" fill="#f1c40f"/>
+        <text x="40" y="115" class="label">Others</text>
+        <text x="150" y="115" class="percentage">15%</text>
+    </g>
+    
+    <text x="400" y="380" class="label" text-anchor="middle">MCP Server Market Share (2025)</text>
+</svg>
