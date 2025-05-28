@@ -1,122 +1,116 @@
-# MCP Server Repository 
+# MCP Server Implementation Example
 
-## Overview
-This repository demonstrates the implementation and usage of GitHub's Model Context Protocol (MCP) Server, a powerful integration tool that bridges Visual Studio Code with GitHub's AI capabilities.
+<div align="center">
 
-## About This Repository
-Created on May 27, 2025, this repository serves as both a demonstration and documentation of MCP Server capabilities. It showcases how modern development workflows can leverage AI-assisted coding and repository management through VS Code.
+[![Last Commit](https://img.shields.io/github/last-commit/ManoharKonala/MCP-Server?style=flat-square)](https://github.com/ManoharKonala/MCP-Server/commits)
+[![VS Code](https://img.shields.io/badge/Made%20with-VS%20Code%20%2B%20MCP-blue?style=flat-square&logo=visual-studio-code)](MCP-Servers-Overview.md)
+[![Docker](https://img.shields.io/badge/Runtime-Docker-blue?style=flat-square&logo=docker)](https://hub.docker.com/r/ghcr.io/github/github-mcp-server)
+[![Documentation](https://img.shields.io/badge/docs-MCP%20Overview-green?style=flat-square)](MCP-Servers-Overview.md)
 
-## Key Components
+*A practical demonstration of GitHub's Model Context Protocol (MCP) Server implementation through VS Code*
 
-### 1. Configuration
-The repository uses the following MCP Server configuration in VS Code:
+</div>
+
+## 🤖 About This Repository
+
+This repository serves as a living example of how to implement and use GitHub's MCP Server through VS Code. Every commit, file operation, and documentation update in this repository is handled through VS Code's MCP integration, demonstrating real-world usage of AI-assisted development.
+
+### Quick Links
+
+- [📚 Comprehensive MCP Overview](MCP-Servers-Overview.md)
+- [🔍 Example Implementation](Example%20File)
+- [📊 Market Analysis](MCP-Servers-Overview.md#current-popular-mcp-servers)
+- [📋 Implementation Guide](MCP-Servers-Overview.md#implementation-guide)
+
+## 🛠️ Repository Features
+
+### 1. AI-Driven Development
+All repository operations are performed through VS Code with MCP Server:
+- **File Creation & Updates**: Every file created and modified through MCP
+- **Commit Messages**: AI-assisted, contextually relevant commit messages
+- **Documentation**: Auto-generated and AI-enhanced documentation
+- **Code Reviews**: MCP-powered code review suggestions
+
+### 2. MCP Server Integration
 ```json
 "mcp": {
-    "inputs": [
-        {
-            "type": "promptString",
-            "id": "github_token",
-            "description": "GitHub Personal Access Token",
-            "password": true
-        }
-    ],
+    "inputs": [{"type": "promptString", "id": "github_token"}],
     "servers": {
         "github": {
             "command": "docker",
-            "args": [
-                "run",
-                "-i",
-                "--rm",
-                "-e",
-                "GITHUB_PERSONAL_ACCESS_TOKEN",
-                "ghcr.io/github/github-mcp-server"
-            ]
+            "args": ["run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", 
+                    "ghcr.io/github/github-mcp-server"]
         }
     }
 }
 ```
 
-### 2. Integration Features
-- **AI-Assisted Development**: Leverages GitHub Copilot through MCP Server
-- **Repository Management**: Direct repository operations from VS Code
-- **Context-Aware Assistance**: Intelligent code suggestions and file operations
-- **Secure Token Handling**: Managed through VS Code's secure storage
-
-### 3. Development Environment
-- **IDE**: Visual Studio Code
-- **Container Runtime**: Docker
-- **Authentication**: GitHub Personal Access Token
-- **Operating System**: Windows
-- **Shell**: Bash
-
-## Repository Structure
+### 3. Repository Structure
 ```
 MCP-Server/
-├── README.md           # Repository documentation
-├── Example File        # Demonstration of MCP Server capabilities
-└── [Future Contents]   # Placeholder for upcoming examples and documentation
+├── README.md                 # This file
+├── MCP-Servers-Overview.md   # Comprehensive MCP documentation
+├── assets/                   # Visual assets for documentation
+└── Example File/            # Implementation examples
 ```
 
-## Getting Started
+## 🚀 Quick Start
 
-### Prerequisites
-1. Visual Studio Code
-2. Docker Desktop
-3. GitHub Account with Personal Access Token
-4. VS Code GitHub Extensions
+1. **Prerequisites**
+   - Visual Studio Code
+   - Docker Desktop
+   - GitHub Account
+   - Personal Access Token
 
-### Setup Instructions
-1. Clone this repository
-2. Configure VS Code settings.json with MCP Server configuration
-3. Install required VS Code extensions
-4. Set up GitHub Personal Access Token
-5. Start Docker Desktop
+2. **Setup**
+   ```bash
+   # Clone repository
+   git clone https://github.com/ManoharKonala/MCP-Server.git
+   
+   # Configure VS Code settings.json with MCP configuration
+   # Start Docker Desktop
+   # Install VS Code GitHub extension
+   ```
 
-### Testing the Setup
-1. Open VS Code
-2. Connect to GitHub (verify token)
-3. Test MCP Server connection
-4. Try example operations
+3. **Verify Setup**
+   - Open VS Code
+   - Verify MCP Server connection
+   - Try example operations
 
-## Use Cases
-1. **Repository Management**
-   - Create and modify files
-   - Manage commits and branches
-   - Handle pull requests
-   - Review code changes
+## 🤝 Contributing
 
-2. **AI-Assisted Development**
-   - Code completion suggestions
-   - Documentation generation
-   - Code refactoring assistance
-   - Context-aware file operations
+This repository welcomes contributions! All contributions should be made through VS Code using MCP Server to maintain consistency and demonstrate AI-assisted development practices.
 
-3. **Development Workflow Integration**
-   - Seamless VS Code experience
-   - Containerized execution
-   - Secure credential management
-   - Automated operations
+1. Fork the repository
+2. Create your feature branch
+3. Make changes using VS Code + MCP
+4. Let MCP assist with commit messages
+5. Submit a pull request
 
-## Security Considerations
-- Personal Access Tokens are stored securely
+## 📖 Documentation Structure
+
+- **README.md**: Repository-specific information and setup (this file)
+- **MCP-Servers-Overview.md**: Comprehensive MCP documentation
+- **Example File**: Practical implementation examples
+
+## 🔒 Security
+
+- Personal Access Tokens stored securely in VS Code
 - Docker container isolation
-- Token scope limitations
-- Secure communication protocols
+- Secure MCP Server communication
+- Limited token scopes
 
-## Contributing
-Feel free to contribute to this repository by:
-1. Creating issues for bugs or feature requests
-2. Submitting pull requests with improvements
-3. Adding more examples and documentation
-4. Sharing your experience and use cases
+## 📝 Notes
 
-## License
-This project is under standard GitHub terms.
-
-## Acknowledgments
-- GitHub Team for MCP Server
-- VS Code Team for integration capabilities
-- Docker for containerization support
+- Every commit in this repository is made through VS Code using GitHub MCP
+- Documentation is continuously updated using AI assistance
+- Examples are verified and tested through MCP integration
 
 ---
-Created and maintained using GitHub MCP Server through VS Code.
+<div align="center">
+
+*This repository is maintained using GitHub MCP Server through VS Code*
+
+[View MCP Server Documentation](MCP-Servers-Overview.md) • [Report Issues](../../issues) • [Contribute](../../pulls)
+
+</div>
