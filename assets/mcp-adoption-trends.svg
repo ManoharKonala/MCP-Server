@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .trend-line { fill: none; stroke-width: 3; }
+        .github { stroke: #3498db; }
+        .azure { stroke: #2ecc71; }
+        .aws { stroke: #e74c3c; }
+        .meta { stroke: #9b59b6; }
+        .anthropic { stroke: #f1c40f; }
+        .grid { stroke: #ecf0f1; stroke-width: 1; }
+        .label { font-family: Arial; fill: #2c3e50; font-size: 12px; }
+        .axis { stroke: #bdc3c7; stroke-width: 2; }
+    </style>
+    
+    <!-- Grid -->
+    <g>
+        <line x1="50" y1="50" x2="50" y2="350" class="axis"/>
+        <line x1="50" y1="350" x2="750" y2="350" class="axis"/>
+        
+        <!-- Horizontal grid -->
+        <line x1="50" y1="50" x2="750" y2="50" class="grid"/>
+        <line x1="50" y1="150" x2="750" y2="150" class="grid"/>
+        <line x1="50" y1="250" x2="750" y2="250" class="grid"/>
+        
+        <!-- Vertical grid -->
+        <text x="150" y="370" class="label">2024</text>
+        <text x="325" y="370" class="label">2025</text>
+        <text x="500" y="370" class="label">2026</text>
+        <text x="675" y="370" class="label">2027</text>
+    </g>
+    
+    <!-- Trend lines -->
+    <path d="M50,300 Q200,250 400,100 T750,50" class="trend-line github"/>
+    <path d="M50,320 Q200,280 400,150 T750,100" class="trend-line azure"/>
+    <path d="M50,330 Q200,300 400,200 T750,150" class="trend-line aws"/>
+    <path d="M50,340 Q200,320 400,250 T750,200" class="trend-line meta"/>
+    <path d="M50,345 Q200,330 400,280 T750,250" class="trend-line anthropic"/>
+    
+    <!-- Legend -->
+    <g transform="translate(600,50)">
+        <line x1="0" y1="0" x2="20" y2="0" class="trend-line github"/>
+        <text x="25" y="5" class="label">GitHub MCP</text>
+        
+        <line x1="0" y1="20" x2="20" y2="20" class="trend-line azure"/>
+        <text x="25" y="25" class="label">Azure MCP</text>
+        
+        <line x1="0" y1="40" x2="20" y2="40" class="trend-line aws"/>
+        <text x="25" y="45" class="label">AWS MCP</text>
+        
+        <line x1="0" y1="60" x2="20" y2="60" class="trend-line meta"/>
+        <text x="25" y="65" class="label">Meta AI MCP</text>
+        
+        <line x1="0" y1="80" x2="20" y2="80" class="trend-line anthropic"/>
+        <text x="25" y="85" class="label">Anthropic MCP</text>
+    </g>
+    
+    <!-- Axis labels -->
+    <text x="400" y="390" class="label" text-anchor="middle">Year</text>
+    <text x="30" y="200" class="label" transform="rotate(-90,30,200)">Market Share (%)</text>
+</svg>
