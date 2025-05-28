@@ -1,4 +1,4 @@
-# MCP Server Implementation Example
+# MCP Server Implementation
 
 <div align="center">
 
