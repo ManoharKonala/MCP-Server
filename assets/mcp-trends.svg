@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .chart-line { fill: none; stroke-width: 3; }
+            .line1 { stroke: #3498db; }
+            .line2 { stroke: #2ecc71; }
+            .line3 { stroke: #e74c3c; }
+            .label { font-family: Arial; fill: #2c3e50; }
+        </style>
+    </defs>
+    <rect width="800" height="400" fill="#f8f9fa"/>
+    
+    <!-- Grid lines -->
+    <g stroke="#dee2e6" stroke-width="1">
+        <line x1="100" y1="50" x2="100" y2="350"/>
+        <line x1="100" y1="350" x2="700" y2="350"/>
+    </g>
+    
+    <!-- Trend lines -->
+    <path d="M100,300 Q400,250 700,100" class="chart-line line1"/>
+    <path d="M100,280 Q400,200 700,150" class="chart-line line2"/>
+    <path d="M100,320 Q400,280 700,200" class="chart-line line3"/>
+    
+    <!-- Labels -->
+    <text x="50" y="200" class="label" transform="rotate(-90,50,200)">Adoption</text>
+    <text x="400" y="380" class="label" text-anchor="middle">Time (2025-2027)</text>
+    
+    <!-- Legend -->
+    <g transform="translate(550,50)">
+        <line x1="0" y1="0" x2="20" y2="0" class="chart-line line1"/>
+        <text x="25" y="5" class="label">GitHub MCP</text>
+        <line x1="0" y1="20" x2="20" y2="20" class="chart-line line2"/>
+        <text x="25" y="25" class="label">Azure MCP</text>
+        <line x1="0" y1="40" x2="20" y2="40" class="chart-line line3"/>
+        <text x="25" y="45" class="label">AWS MCP</text>
+    </g>
+</svg>
