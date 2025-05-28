@@ -291,6 +291,20 @@ graph TD
 ### Trend Analysis
 
 #### 1. Hybrid MCP Servers
+```mermaid
+graph LR
+    A[VS Code + Local MCP] --> B[Hybrid MCP Server]
+    B --> C[GitHub Repo + Context Engine]
+    B --> D[Private Cloud Storage]
+    C --> E[AI Model]
+    D --> E
+
+    style A fill:#3498db,stroke:#1f78b4,color:#fff
+    style B fill:#9b59b6,stroke:#8e44ad,color:#fff
+    style C fill:#2ecc71,stroke:#27ae60,color:#000
+    style D fill:#f39c12,stroke:#e67e22,color:#000
+    style E fill:#e74c3c,stroke:#c0392b,color:#fff
+```
 <div class="hybrid-mcp">
   <table>
     <tr>
@@ -329,6 +343,20 @@ graph TD
 </div>
 
 #### 2. Edge-Enabled MCP
+```mermaid
+graph LR
+    A[Edge Device<br>Lightweight MCP] --> B[Edge MCP Gateway]
+    B --> C[Cloud Sync Engine]
+    C --> D[Central Context Repository]
+    D --> E[AI Model + Updates]
+    E --> A
+
+    style A fill:#3498db,stroke:#1f78b4,color:#fff
+    style B fill:#9b59b6,stroke:#8e44ad,color:#fff
+    style C fill:#2ecc71,stroke:#27ae60,color:#000
+    style D fill:#f1c40f,stroke:#f39c12,color:#000
+    style E fill:#e74c3c,stroke:#c0392b,color:#fff
+```
 <div class="edge-mcp">
   <table>
     <tr>
@@ -357,15 +385,22 @@ graph TD
 #### 3. Federated MCP Systems
 <div class="federated-mcp">
   <h4>Architecture Overview</h4>
+  
   ```mermaid
-  graph TD
-    A[Local MCP Node] -->|Sync| B[Federation Hub]
-    C[Local MCP Node] -->|Sync| B
-    D[Local MCP Node] -->|Sync| B
-    B -->|Aggregation| E[Global Model]
-    E -->|Update| A
-    E -->|Update| C
-    E -->|Update| D
+  graph LR
+    A[Dev Node A<br>VS Code + MCP] --> E[Federation Hub]
+    B[Dev Node B<br>VS Code + MCP] --> E
+    C[Dev Node C<br>VS Code + MCP] --> E
+    E --> D[Global Model<br>Train + Update]
+    D --> A
+    D --> B
+    D --> C
+
+    style A fill:#3498db,stroke:#1f78b4,color:#fff
+    style B fill:#3498db,stroke:#1f78b4,color:#fff
+    style C fill:#3498db,stroke:#1f78b4,color:#fff
+    style E fill:#9b59b6,stroke:#8e44ad,color:#fff
+    style D fill:#f39c12,stroke:#d35400,color:#000
   ```
 
   <table>
