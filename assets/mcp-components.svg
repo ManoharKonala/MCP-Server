@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .component { fill: #3498db; stroke: #2980b9; rx: 10; ry: 10; }
+        .label { font-family: Arial; fill: white; text-anchor: middle; }
+        .description { font-family: Arial; fill: #2c3e50; font-size: 12px; }
+        .connection { stroke: #34495e; stroke-width: 2; }
+    </style>
+    
+    <!-- Core Components -->
+    <g transform="translate(350,50)">
+        <rect width="150" height="70" class="component"/>
+        <text x="75" y="35" class="label">Core Engine</text>
+        <text x="75" y="55" class="label" style="font-size: 12px">Context Processing</text>
+    </g>
+    
+    <!-- IDE Integration -->
+    <g transform="translate(100,200)">
+        <rect width="150" height="70" class="component"/>
+        <text x="75" y="35" class="label">IDE Plugin</text>
+        <text x="75" y="55" class="label" style="font-size: 12px">VS Code Extension</text>
+    </g>
+    
+    <!-- AI Models -->
+    <g transform="translate(600,200)">
+        <rect width="150" height="70" class="component"/>
+        <text x="75" y="35" class="label">AI Models</text>
+        <text x="75" y="55" class="label" style="font-size: 12px">LLM Integration</text>
+    </g>
+    
+    <!-- Repository -->
+    <g transform="translate(350,300)">
+        <rect width="150" height="70" class="component"/>
+        <text x="75" y="35" class="label">Code Repository</text>
+        <text x="75" y="55" class="label" style="font-size: 12px">GitHub Integration</text>
+    </g>
+    
+    <!-- Connections -->
+    <path d="M175,235 L350,85" class="connection"/>
+    <path d="M500,85 L675,235" class="connection"/>
+    <path d="M425,120 L425,300" class="connection"/>
+</svg>
