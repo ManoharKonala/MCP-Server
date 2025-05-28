@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .milestone { fill: #3498db; stroke: #2980b9; rx: 10; ry: 10; }
+        .milestone-text { font-family: Arial; fill: white; text-anchor: middle; }
+        .timeline { stroke: #bdc3c7; stroke-width: 4; }
+        .date { font-family: Arial; fill: #7f8c8d; }
+        .status { font-family: Arial; fill: #2c3e50; }
+        .status-done { fill: #27ae60; }
+        .status-progress { fill: #f39c12; }
+        .status-planned { fill: #95a5a6; }
+    </style>
+    
+    <!-- Timeline Line -->
+    <line x1="100" y1="150" x2="700" y2="150" class="timeline"/>
+    
+    <!-- Q2 2025 -->
+    <g transform="translate(150,150)">
+        <rect width="120" height="60" y="-80" x="-60" class="milestone"/>
+        <text x="0" y="-45" class="milestone-text">Context</text>
+        <text x="0" y="-30" class="milestone-text">Awareness</text>
+        <text x="0" y="-90" class="date">Q2 2025</text>
+        <circle r="15" class="status-done"/>
+        <text x="0" y="40" class="status">Released</text>
+    </g>
+    
+    <!-- Q3 2025 -->
+    <g transform="translate(300,150)">
+        <rect width="120" height="60" y="-80" x="-60" class="milestone"/>
+        <text x="0" y="-45" class="milestone-text">Quantum</text>
+        <text x="0" y="-30" class="milestone-text">Ready</text>
+        <text x="0" y="-90" class="date">Q3 2025</text>
+        <circle r="15" class="status-progress"/>
+        <text x="0" y="40" class="status">In Progress</text>
+    </g>
+    
+    <!-- Q4 2025 -->
+    <g transform="translate(450,150)">
+        <rect width="120" height="60" y="-80" x="-60" class="milestone"/>
+        <text x="0" y="-45" class="milestone-text">Edge</text>
+        <text x="0" y="-30" class="milestone-text">Computing</text>
+        <text x="0" y="-90" class="date">Q4 2025</text>
+        <circle r="15" class="status-planned"/>
+        <text x="0" y="40" class="status">Planned</text>
+    </g>
+    
+    <!-- Q1 2026 -->
+    <g transform="translate(600,150)">
+        <rect width="120" height="60" y="-80" x="-60" class="milestone"/>
+        <text x="0" y="-45" class="milestone-text">Zero</text>
+        <text x="0" y="-30" class="milestone-text">Trust</text>
+        <text x="0" y="-90" class="date">Q1 2026</text>
+        <circle r="15" class="status-planned"/>
+        <text x="0" y="40" class="status">Planned</text>
+    </g>
+</svg>
